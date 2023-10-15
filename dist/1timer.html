@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+    <!-- Include the Tailwind CSS stylesheet -->
+    <link rel="stylesheet" href="output.css">
+    <style>
+        .timer {
+            font-size: 2rem;
+        }
+        .font{
+            font-family: 'Spline Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-0 m-0 box-border font">
+        <header class="pt-[50px] container m-auto flex justify-between">
+            <a href="index.html" class="flex gap-1">
+                <img class="w-[70px] h-[70px]" src="Image/new logo1.png" alt="logo">
+                <h1 class="text-[#45479e] font-extrabold text-[30px] pt-[8px]">MindSphereX</h1>
+            </a>
+            <div class="flex border-[2px] mt-[50px] mr-[120px] rounded-2xl pb-[12px] px-[15px] border-gray-400 justify-between gap-8 text-gray-500 font-semibold text-[18px] pt-[12px]"> 
+                <a href="discover.html"><h1 class="bg-[#d1c8ff] p-[10px] rounded-xl">Student</h1></a>
+                <a href="#"><h1 class="hover:bg-[#d1c8ff] p-[10px] rounded-xl">Working Professioanl</h1></a>
+                <a href="#"><h1 class="hover:bg-[#d1c8ff] p-[10px] rounded-xl">On a Break</h1></a>
+                <a href="#"><h1 class="hover:bg-[#d1c8ff] p-[10px] rounded-xl">Figuring out</h1></a>         
+            </div>
+            <a class=" text-[#45479e] font-semibold text-[18px] pt-[12px]" href="contact.html"><h1>Contact us</h1></a>
+        </header>
+
+
+    <div class="text-center items-center flex flex-col p-8"> <div class="p-0 m-0 box-border font">
+        
+    <h1 class="text-3xl mb-4 text-gray-700">1-Hour Countdown Timer</h1>
+    <div class="timer text-gray-700" id="timer">60:00</div>
+    <div class="mt-4 mb-[32px]">
+        <button class="bg-[#aeafe7] hover:bg-[#4548a3] text-white font-bold p-[15px] rounded-xl text-[1rem] mr-4" id="startButton">Start</button>
+        <button class="bg-[#aeafe7] hover:bg-[#34378b]  text-white font-bold p-[15px] rounded-xl text-[1rem]" id="stopButton">Stop</button>
+    </div>
+    <div>
+        <a class="font-semibold text-[1rem] bg-[#aeafe7] hover:text-white  hover:bg-[#34378b] text-[#34378b] rounded-xl p-[15px]" href="videoconferencing.html">Join Room</a>
+    </div>
+    <div class="mt-[32px] items-center">
+        <h1 class="text-center p-[15px] font-semibold text-[#34378b] text-[1rem] font">By Joining the Room you will be Able to join People following the same schedule as you and you can study with them</h1>
+    </div>
+</div>
+</div>
+
+    <script>
+        let timerInterval;
+        let time = 60 * 60; // 1 hour in seconds
+
+        function startTimer() {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+
+            const timerElement = document.getElementById("timer");
+            timerElement.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+            if (time > 0) {
+                time--;
+            } else {
+                stopTimer();
+            }
+        }
+
+        document.getElementById("startButton").addEventListener("click", startTimer);
+        document.getElementById("stopButton").addEventListener("click", stopTimer);
+    </script>
+</body>
+</html>

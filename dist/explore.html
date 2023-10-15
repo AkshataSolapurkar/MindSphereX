@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>MindSphereX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins&family=Spline+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .font{
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .bg-custom {
+           background-image: url('gradient.png');
+           background-size: cover;
+           background-position: center;
+           
+}
+.circle {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #45479e;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .filled {
+            background-color: #45479e;
+        }
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-0 m-0 box-border font">
+        <header class="pt-[50px] container m-auto flex justify-between">
+            <a href="index.html" class="flex gap-1">
+                <img class="w-[70px] h-[70px]" src="Image/new logo1.png" alt="logo">
+                <h1 class="text-[#45479e] font-extrabold text-[30px] pt-[8px]">MindSphereX</h1>
+            </a>
+            <div class="flex border-[2px] mt-[50px] mr-[120px] rounded-2xl pb-[12px] px-[15px] border-gray-400 justify-between gap-8 text-gray-500 font-semibold text-[18px] pt-[12px]"> 
+                <a href="Student.html"><h1 class="hover:bg-[#d1c8ff] p-[10px] rounded-xl">Student</h1></a>
+                <a href="workingprofesh.html"><h1 class="hover:bg-[#d1c8ff] p-[10px] rounded-xl">Working Professioanl</h1></a>
+                <a href="Onabreak.html"><h1 class="hover:bg-[#d1c8ff] p-[10px] rounded-xl">On a Break</h1></a>
+                <a href="figuringout.html"><h1 class="bg-[#d1c8ff] p-[10px] rounded-xl">Figuring out</h1></a>         
+            </div>
+            <a class=" text-[#45479e] font-semibold text-[18px] pt-[12px]" href="contact.html"><h1>Contact us</h1></a>
+        </header>
+        
+        <div class="text-center flex items-center flex-col justify-center mt-[30px]">
+            <h1 class="text-[1.7rem] font-bold text-[#45479e] mb-6">Exploring?</h1>
+             
+            <ul id="taskList">
+                <li class="task flex  hover:bg-gray-300 rounded-2xl">
+                    <div class="circle m-8" onclick="toggleDone(this)"></div>
+                    <a href="1timer.html" class="font block p-4 m-4 text-center text-gray-800 no-underline"><span>
+                        <h1 class="font-semibold text-[1rem] text-[#45479e]">Pick Anyone Skill you are intrested In and practice</h1>
+                    </span>
+                   </a>
+                </li>
+                <li class="task flex  hover:bg-gray-300 rounded-2xl">
+                    <div class="circle m-8" onclick="toggleDone(this)"></div>
+                    <a href="1timer.html" class="font block p-4 m-4 text-center text-gray-800 no-underline"><span>
+                        <h1 class="font-semibold text-[1rem] text-[#45479e]">Read a book about the Skill that is Learning the stubject</h1>
+                    </span>
+                   </a>
+                </li>
+                <li class="task flex  hover:bg-gray-300 rounded-2xl">
+                    <div class="circle m-8" onclick="toggleDone(this)"></div>
+                    <a href="1timer.html" class="font block p-4 m-4 text-center text-gray-800 no-underline"><span>
+                        <h1 class="font-semibold text-[1rem] text-[#45479e]">Watch some Videos to Learn from the learnend</h1>
+                    </span>
+                   </a>
+                </li>
+                <!-- Add more tasks as needed -->
+            </ul>
+
+            <!--<a class="block p-4 m-4  hover:bg-gray-300 text-center text-gray-800 no-underline" href="#">
+                <h1>Session 1</h1>
+                <p>(1 hour): Study or work on your most important task.</p>
+            </a>
+            <a class="block p-4 m-4  hover:bg-gray-300 text-center text-gray-800 no-underline" href="#">
+                <h1>Session 2</h1>
+                <p>(1 hour): Question Yourself with whatever you have studied.</p>
+            </a>
+            <a class="block p-4 m-4  hover:bg-gray-300 text-center text-gray-800 no-underline" href="#">
+                <h1>Session 3</h1>
+                <p>(1 hour):Use this time for another task or wrap up your work.</p>
+            </a>-->
+        </div>
+
+
+    </div>
+    <script>
+        function toggleDone(circle) {
+            circle.classList.toggle("filled");
+            var taskText = circle.nextElementSibling;
+            taskText.classList.toggle("done");
+        }
+    </script>
+</body>
+</html>

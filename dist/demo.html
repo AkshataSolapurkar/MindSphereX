@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prevent Tab Switching</title>
+</head>
+<body>
+    <h1>Try to switch to a different tab</h1>
+    <p>Click on another browser tab or window.</p>
+
+    <script>
+        var isPageVisible = true;
+
+        // Check if the user switches to a different tab or window
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                isPageVisible = false;
+                // Display a pop-up here or perform an action
+                alert('Hey! Come back to this tab!');
+            } else {
+                isPageVisible = true;
+            }
+        });
+
+        // You can use the `isPageVisible` variable to check if the page is currently visible or not.
+
+        // Example: Prevent leaving the page if it's not visible
+        window.onbeforeunload = function() {
+            if (!isPageVisible) {
+                return "Are you sure you want to leave this page?";
+            }
+        };
+    </script>
+</body>
+</html>
+
+
+
+
